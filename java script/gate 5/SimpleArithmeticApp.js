@@ -1,3 +1,21 @@
+// get random numbers 
+// declare variables 
+// no negative numbers as result
+// generate my first numbers from 51 to 100
+//generate second numbers from 1 to 50
+//print welcome 
+// 10 questions must be taken
+// generate correct answer
+//  ask to subtract the second number from the first number
+// 2 trials on each question
+// if you fail the number again after 2 attempts move to the next number
+//calculate number of passes
+// subtract the numbers
+// calculate and display number of fail and pass
+
+
+
+
 let firstNumber = Math.floor(Math.random()*(51-100+1))+5;
 let secondNumber = Math.floor(Math.random()*(1-50+1))+5
 let correctCount = 0;
