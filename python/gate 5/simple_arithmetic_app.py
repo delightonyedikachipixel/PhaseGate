@@ -11,7 +11,7 @@
 # if you fail the number again after 2 attempts move to the next number
 #calculate number of passes
 # subtract the numbers
-
+# calculate and display number of fail and pass
 
 import random
 
