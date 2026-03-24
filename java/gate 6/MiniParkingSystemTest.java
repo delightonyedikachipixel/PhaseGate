@@ -3,6 +3,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 
 
 
@@ -60,6 +61,6 @@ public class MiniParkingSystemTest {
         lot.parkCar(6);
 
         int available = lot.totalSpaces - lot.occupiedSpaces; 
-        assertEquals(8, available); 
+        assertEquals(14, available); 
     }
 }

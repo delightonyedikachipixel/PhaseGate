@@ -2,8 +2,8 @@ import java.util.Scanner;
 
 public class MiniParkingSystem {
 
-    private int totalSpaces;
-    private int occupiedSpaces;
+     int totalSpaces;
+    int occupiedSpaces;
 
     
     public void initialize(int space) {
@@ -11,27 +11,30 @@ public class MiniParkingSystem {
         occupiedSpaces = 0;
     }
 
-    public boolean parkCar(int cars) {
-        if (occupiedSpaces + cars <= totalSpaces) {
-            occupiedSpaces += cars;
-            return true;
-        }
-        return false;
-    }
-
-    public boolean removeCar(int cars) {
-        if (occupiedSpaces >= cars) {
-            occupiedSpaces -= cars;
+   
+    public boolean parkCar(int carNumber) {
+        if (occupiedSpaces < totalSpaces) {
+            occupiedSpaces++;
             return true;
         }
         return false;
     }
 
     
-    public int checkAvailability(int parked, int leaving, int newCars) {
-        return totalSpaces - parked + leaving - newCars;
+    public boolean removeCar(int carNumber) {
+        if (occupiedSpaces > 0) {
+            occupiedSpaces--;
+            return true;
+        }
+        return false;
     }
 
+    
+    public int checkAvailability() {
+        return totalSpaces - occupiedSpaces;
+    }
+
+    
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
@@ -53,17 +56,15 @@ public class MiniParkingSystem {
 
         System.out.println("\n" + name + "!");
 
-        ParkingLot lot = new ParkingLot();
-        lot.initialize(totalSpaces); 
+        MiniParkingSystem lot = new MiniParkingSystem();
+        lot.initialize(totalSpaces);
 
-        boolean result = lot.parkCar(1);
+        boolean result = lot.parkCar(carNumber);
 
         if (!result) {
             System.out.println("Parking failed");
         } else {
             System.out.println("Car parked successfully in space " + parkingSpace);
         }
-
-       
     }
 }
